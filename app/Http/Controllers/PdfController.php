@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User; 
+use Illuminate\Support\Facades\Route;
 use App\Models\Transaction;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
@@ -21,7 +22,10 @@ class PdfController extends Controller
             $user = User::find($userId);  // Temukan user berdasarkan ID
             $query->where('created_by_user_id', $userId); // Filter berdasarkan ID user
         }
-  
+        
+        // if(!isset($user)){
+        //     dd();
+        // }
         
         // Ambil hasil query
         $transactions = $query->get();

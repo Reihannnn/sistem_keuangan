@@ -97,7 +97,7 @@ class TransactionResource extends Resource
                             Tables\Actions\DeleteBulkAction::make(),
                         ]),
                     ]);
-                    
+                   
     }
 
     public static function getRelations(): array
