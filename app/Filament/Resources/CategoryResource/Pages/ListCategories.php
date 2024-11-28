@@ -14,6 +14,9 @@ class ListCategories extends ListRecords
     {
         return [
             Actions\CreateAction::make(),
+            Actions\Action::make('toDashboard')
+            ->label("Dashboard")
+            ->url(fn () => url('/dashboard/user-dashboard')) // Konversi query menjadi string
         ];
     }
 }
